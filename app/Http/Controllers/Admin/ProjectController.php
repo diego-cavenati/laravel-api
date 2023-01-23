@@ -10,6 +10,7 @@ use App\Models\Tecnology;
 use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -20,7 +21,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderByDesc('id')->get()->paginate(5);
+        // $projects = Project::orderByDesc('id')->get(); //->paginate(5)
+        $projects = Project::orderByDesc('id')->get(); //->paginate(5)
         return view('admin.projects.index', compact('projects'));
     }
 

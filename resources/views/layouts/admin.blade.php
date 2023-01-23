@@ -27,7 +27,6 @@
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#712cf9">
 
-
 </head>
 
 <body>
@@ -59,7 +58,7 @@
     <!-- <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
         {{-- config('app.name', 'Laravel') --}}
     </a> -->
-    <div id="app">
+    <div id="app-admin">
 
         <div class="d-flex flex-nowrap side-nav">
             <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">

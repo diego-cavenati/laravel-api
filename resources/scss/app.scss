@@ -2,6 +2,11 @@
 
 #app {
     display: flex;
+    flex-direction: column;
+}
+
+#app-admin {
+    display: flex;
     flex-direction: row;
 }
 
