@@ -13,29 +13,27 @@ class LeadController extends Controller
 {
     public function store(Request $request)
     {
-
         $data = $request->all();
 
-        //validazione
         $validator = Validator::make($data, [
             'name' => 'required',
             'email' => 'required|email',
-            'message' => 'required',
+            'message' => 'required'
         ]);
 
         if ($validator->fails()) {
 
             return response()->json([
                 'success' => false,
-                'errors' => $validator->errors(),
+                'errors' => $validator->errors()
             ]);
-        };
+        }
 
         $new_lead = new Lead();
         $new_lead->fill($data);
-        $new_lead->save;
+        $new_lead->save();
 
-        Mail::to('admin@gmail.com')->send(new NewContact($new_lead));
+        Mail::to('admin@laravel.it')->send(new NewContact($new_lead));
 
         return response()->json([
             'success' => true
